@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Logout Logic ---
 
     const logout = () => {
-        if (confirm('Are you sure you want to logout?')) {
+        if (confirm('Are you sure you want to breakup? This will disconnect you from your partner.')) {
             localStorage.removeItem('connected');
             window.location.href = 'login.html';
         }

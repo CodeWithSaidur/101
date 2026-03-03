@@ -544,7 +544,7 @@ h3 {
     margin-bottom: 8px;
 }
 
-.text-logout {
+.text-breakup {
     margin-top: 40px;
     background: transparent;
     border: none;
@@ -554,7 +554,7 @@ h3 {
     transition: var(--hover-transition);
 }
 
-.text-logout:hover {
+.text-breakup:hover {
     color: #f43f5e;
 }
 
