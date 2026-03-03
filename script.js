@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function connectToPartner() {
+        localStorage.setItem('connected', 'true');
         searchSection.classList.add('hidden');
         chatArea.classList.remove('hidden');
 
@@ -96,10 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') sendBtn.click();
     });
 
+    // --- Persistence Logic ---
+    if (localStorage.getItem('connected') === 'true') {
+        connectToPartner();
+    }
+
     // --- Logout Logic ---
 
     const logout = () => {
         if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('connected');
             window.location.href = 'login.html';
         }
     };
