@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminary Chat | Premium Messenger Template</title>
+    <meta name="description" content="A high-end, modern chat application template built with HTML, CSS, and JS.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Find Partner Section (Visible when not connected) -->
+        <section id="partner-search-section" class="partner-search-section">
+            <div class="search-card">
+                <div class="search-header">
+                    <i class="fas fa-heart search-icon"></i>
+                    <h1>Connect with Partner</h1>
+                    <p>Enter your partner's phone number to start your private chat.</p>
+                </div>
+
+                <div class="search-form">
+                    <div class="search-input-wrapper-lg">
+                        <i class="fas fa-search"></i>
+                        <input type="tel" id="partner-phone-search" placeholder="e.g. +1 555 123 4567">
+                        <button id="search-btn">Find</button>
+                    </div>
+                </div>
+
+                <div id="search-results" class="search-results hidden">
+                    <div class="result-card">
+                        <div class="partner-preview">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Emma" alt="Partner"
+                                class="avatar-lg">
+                            <div class="partner-meta">
+                                <h3 id="found-name">Emma Watson</h3>
+                                <span class="status-badge">Available</span>
+                            </div>
+                        </div>
+                        <button id="send-request-btn" class="request-btn">Send Connection Request</button>
+                    </div>
+                </div>
+
+                <div id="request-sent-status" class="request-status hidden">
+                    <div class="status-content">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>Request Sent!</h3>
+                        <p>Waiting for <span id="pending-name">Emma</span> to accept...</p>
+                    </div>
+                </div>
+
+                <button id="main-logout-btn" class="text-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </section>
+
+        <!-- Main Chat Area (Visible when connected) -->
+        <main class="chat-area hidden" id="main-chat-area">
+            <header class="chat-header">
+                <div class="active-contact-info">
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Emma" alt="Partner" id="active-avatar"
+                            class="avatar">
+                        <div class="status-dot online"></div>
+                    </div>
+                    <div class="active-details">
+                        <h2 id="active-name">Emma Watson</h2>
+                        <span class="status-text">Connected</span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button id="chat-logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+                    <button title="Voice Call"><i class="fas fa-phone"></i></button>
+                    <button title="Video Call"><i class="fas fa-video"></i></button>
+                </div>
+            </header>
+
+            <div class="messages-container" id="messages-container">
+                <div class="system-message">You are now connected. Start your private conversation.</div>
+            </div>
+
+            <footer class="input-area">
+                <button class="attachment-btn"><i class="fas fa-paperclip"></i></button>
+                <div class="input-wrapper">
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button class="emoji-btn"><i class="far fa-face-smile"></i></button>
+                </div>
+                <button class="send-btn" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
